@@ -29,6 +29,7 @@ const onMessage = async (ws, message) => {
   else if (getMessagEntry[0].type === "sendUserData") {
     const newMessageEntry = JSON.parse(getMessagEntry[0].message);
     const usernameOutput = newMessageEntry.username;
+    await receiveUser(usernameOutput);
 
   }
   websockets.push(ws);
