@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117;
+}
+#chatwindow {
+    width: 800px;
+    height: 400px;
+    max-height: 600px;
+    overflow-y: scroll;
+}
+#chatbox{
+    margin: 10px;
+    background-color: rgba(26, 24, 35, 0.427);
+    color: rgb(219, 209, 209);
+    padding: 8px;
+}
+
+#chatboxUser{
+    margin: 10px;
+    background-color: rgba(26, 24, 35, 0.427);
+    color: rgb(219, 209, 209);
+    padding: 8px;
+}
+#inputWindow {
+    width: 800px;
+}

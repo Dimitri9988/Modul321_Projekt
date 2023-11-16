@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat Program</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/script.js"></script>
+    <script src="/index.js"></script>
+</head>
+<body>
+    
+
+    <div class="w-screen h-screen bg-gray-900 justify-center flex items-center flex flex-col">
+        <h1 class="text-white text-4xl my-3 font-bold ">Super Chat Extrem Omega LUL</h1>
+
+        <div id="chatwindow" class="w-full h-80 bg-gradient-to-r from-violet-900 to-fuchsia-900 rounded-lg">
+          
+            <div id="chatbox" class="w-5/12 h-fit bg-indigo-100 rounded-lg">
+                <span class="text-xl font-bold">KIM</span> 
+                <div class="border-t border-gray-500 my-1"></div> 
+                <p class="">Hallo Ich bin KIM deine Künstliche Inteligenz Maschine.</p>
+                <div class="border-t border-gray-500 my-1"></div> 
+                <span class="text-xs text-left underline-offset-1">18.08.2077, 13:37:68</span>
+            </div>
+
+
+            
+            <div id="chatbox" class="w-5/12 h-fit bg-indigo-100 rounded-lg ">
+                <span class="text-xl font-bold">KIM</span> 
+                <div class="border-t border-gray-500 my-1"></div> 
+                <p class="">
+                    Ich habe einen Neuen Chat Initialisiert. Tausche dich mit den anderen aus. 
+                     Die eigene Nachrichten sind mit einem hellen Rand markirt.
+                     Untem dem Chatfenster kanst du deine Nachricht schreiben oder dein Benutzername auswählen
+                </p>
+                <div class="border-t border-gray-500 my-1"></div> 
+                <span class="text-xs text-left underline-offset-1">18.08.2077, 13:38:04</span>
+            </div>
+        </div>
+        <div id="inputWindow" class="w-full rounded-lg mt-1.5">
+            <div class="flex flex-row" id="">
+                <input type="text" id="message-input" placeholder="Deine Nachricht..." class="w-full p-2 border border-gray-300 rounded" />
+                <button class="bg-blue-500 text-white px-4 py-2 rounded ml-2 w-auto" id="sendButton">Senden</button>
+            </div>
+        </div>
+        <div id="inputWindow" class="w-5/12 rounded-lg mt-1.5">
+            <div class="flex flex-row" id="">
+                <input type="text" id="user-input" placeholder="Dein Benutzername..." class=" p-2 border border-gray-300 rounded" />
+                <button class="bg-blue-500 text-white px-4 py-2 rounded ml-2 w-auto" id="selectUser">Benutzer Speichern</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
