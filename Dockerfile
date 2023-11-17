@@ -9,17 +9,15 @@ COPY package.json .
 COPY package-lock.json .
 
 # Install the dependencies
-RUN npm install
+RUN yarn install
 
+EXPOSE 3000
 
 # Copy the source code to the container
-COPY app.js .
-COPY server/api.js server/
-COPY server/database.js server/
-COPY server/websocketserver.js server/
-COPY client/index.html client/
-COPY client/index.js client/
-COPY client/style.css client/
+COPY . .
 
 # Start the server when the container starts
-CMD ["node", "app.js"]
+CMD ["yarn", "prod"]
+
+
+

@@ -26,6 +26,21 @@ services:
       - MYSQL_ROOT_PASSWORD=supersecret123
     ports:
       - 9200:80
+  
+  mychatapp:
+
+    image: dimitri134/mein-chat-projekt_m321:latest
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on: 
+      - mariadb
+    environment:
+      - DB_NAME=mychat
+      - DB_HOST=mariadb
+      - DB_USER=mychat
+      - DB_PASSWORD=mychatpassword
+
 
 volumes:
   m321_project_mariadb:
