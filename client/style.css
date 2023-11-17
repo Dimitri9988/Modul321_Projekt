@@ -8,6 +8,10 @@ body {
     max-height: 600px;
     overflow-y: scroll;
 }
+#userList {
+    color: rgb(219, 209, 209);
+    overflow-y: scroll;
+}
 #chatbox{
     margin: 10px;
     background-color: rgba(26, 24, 35, 0.427);
@@ -23,4 +27,14 @@ body {
 }
 #inputWindow {
     width: 800px;
+}
+.user-item {
+    margin: 10px;
+    background-color: rgba(26, 24, 35, 0.427);
+    color: rgb(219, 209, 209);
+    padding: 8px;
+}
+#h2UserList {
+    margin: 8px;
+    color: rgb(219, 209, 209);
 }

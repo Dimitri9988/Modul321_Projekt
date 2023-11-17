@@ -1,7 +1,7 @@
 const socket = new WebSocket("ws://localhost:3000");
 
 socket.addEventListener("open", (event) => {
-    console.log("WebSocket connected!");
+    console.log("WebSocket connected!222222222222222");
     socket.send(JSON.stringify("Hello, server!"));
   });
 
@@ -23,7 +23,9 @@ socket.addEventListener("message", (event) => {
     const messages = messageDatas
     const userInput = document.getElementById('user-input');
     const chatBox = document.getElementById('chatwindow');
-    console.log(messageDatas)
+    const userBox = document.getElementById('users')
+    const userdatadatasWsOutput = data[0].users;
+    
 
 
     for (let i = 0; i < messages.length; i++) {
@@ -42,6 +44,17 @@ socket.addEventListener("message", (event) => {
         </div>`;
         chatBox.innerHTML += chatBoxElement;
     }
+    let usersInput = '';
+    for (let i = 0; i < userdatadatasWsOutput.length; i++) {
+      const username = userdatadatasWsOutput[i].username;
+      const userElement = 
+        `<div class="user-item rounded-lg">
+          <span class="text-lg font-bold">${username}</span>
+        </div>`;
+      usersInput = `${usersInput}${userElement}`;
+      userBox.innerHTML = usersInput
+    }
+    
     chatBox.scrollTop = chatBox.scrollHeight;
 })
 
@@ -115,7 +128,7 @@ const newChatBox = async () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+    console.log("1111111")
     document.getElementById('sendButton').addEventListener('click', function () {
         newChatBox();
         

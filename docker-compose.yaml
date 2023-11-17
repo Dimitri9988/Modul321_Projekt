@@ -27,6 +27,7 @@ services:
     ports:
       - 9200:80
   
+  
   mychatapp:
 
     image: dimitri134/mein-chat-projekt_m321:latest

@@ -15,30 +15,43 @@
     <div class="w-screen h-screen bg-gray-900 justify-center flex items-center flex flex-col">
         <h1 class="text-white text-4xl my-3 font-bold ">Super Chat Extrem Omega LUL</h1>
 
-        <div id="chatwindow" class="w-full h-80 bg-gradient-to-r from-violet-900 to-fuchsia-900 rounded-lg">
-          
-            <div id="chatbox" class="w-5/12 h-fit bg-indigo-100 rounded-lg">
-                <span class="text-xl font-bold">KIM</span> 
-                <div class="border-t border-gray-500 my-1"></div> 
-                <p class="">Hallo Ich bin KIM deine Künstliche Inteligenz Maschine.</p>
-                <div class="border-t border-gray-500 my-1"></div> 
-                <span class="text-xs text-left underline-offset-1">18.08.2077, 13:37:68</span>
+        
+        <div class="flex flex-row ">
+            <div id="userList" class="w-2/12h-80 bg-gradient-to-r from-fuchsia-900 to-violet-900 rounded-lg bg-indigo-100 rounded-lg outline mr-1">
+                <h2 class="text-xl font-bold mb-2" id="h2UserList">Benutzerliste</h2>
+                <div id="users">
+                    <div class="user-item rounded-lg">
+                        <span class="text-lg font-bold">KIM</span>
+                    </div>
+                </div>
             </div>
-
-
+            <div id="chatwindow" class="w-full h-80 bg-gradient-to-r from-violet-900 to-fuchsia-900 rounded-lg">
             
-            <div id="chatbox" class="w-5/12 h-fit bg-indigo-100 rounded-lg ">
-                <span class="text-xl font-bold">KIM</span> 
-                <div class="border-t border-gray-500 my-1"></div> 
-                <p class="">
-                    Ich habe einen Neuen Chat Initialisiert. Tausche dich mit den anderen aus. 
-                     Die eigene Nachrichten sind mit einem hellen Rand markirt.
-                     Untem dem Chatfenster kanst du deine Nachricht schreiben oder dein Benutzername auswählen
-                </p>
-                <div class="border-t border-gray-500 my-1"></div> 
-                <span class="text-xs text-left underline-offset-1">18.08.2077, 13:38:04</span>
+                <div id="chatbox" class="w-5/12 h-fit bg-indigo-100 rounded-lg">
+                    <span class="text-xl font-bold">KIM</span> 
+                    <div class="border-t border-gray-500 my-1"></div> 
+                    <p class="">Hallo Ich bin KIM deine Künstliche Inteligenz Maschine.</p>
+                    <div class="border-t border-gray-500 my-1"></div> 
+                    <span class="text-xs text-left underline-offset-1">18.08.2077, 13:37:68</span>
+                </div>
+
+
+                
+                <div id="chatbox" class="w-5/12 h-fit bg-indigo-100 rounded-lg ">
+                    <span class="text-xl font-bold">KIM</span> 
+                    <div class="border-t border-gray-500 my-1"></div> 
+                    <p class="">
+                        Ich habe einen Neuen Chat Initialisiert. Tausche dich mit den anderen aus. 
+                        Die eigene Nachrichten sind mit einem hellen Rand markirt.
+                        Untem dem Chatfenster kanst du deine Nachricht schreiben oder dein Benutzername auswählen
+                    </p>
+                    <div class="border-t border-gray-500 my-1"></div> 
+                    <span class="text-xs text-left underline-offset-1">18.08.2077, 13:38:04</span>
+                </div>
             </div>
         </div>
+
+
         <div id="inputWindow" class="w-full rounded-lg mt-1.5">
             <div class="flex flex-row" id="">
                 <input type="text" id="message-input" placeholder="Deine Nachricht..." class="w-full p-2 border border-gray-300 rounded" />

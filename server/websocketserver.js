@@ -11,8 +11,11 @@ let websockets = [];
 const onConnection = (ws) => {
   console.log("Neue WebSocket-Verbindung");
   
-  console.log(websockets)
+  
   ws.on("message", (message) => onMessage(ws, message));
+
+
+  ws.on("close", () => onClose(ws))
 };
 
 
@@ -29,24 +32,61 @@ const onMessage = async (ws, message) => {
   else if (getMessagEntry[0].type === "sendUserData") {
     const newMessageEntry = JSON.parse(getMessagEntry[0].message);
     const usernameOutput = newMessageEntry.username;
+
+
+    for (let i = 0; i < websockets.length; i++) {
+      if (ws === websockets[i].websocket) {
+        websockets[i].username = usernameOutput;
+      }
+      console.log(websockets[i].username)
+    }
+
+    
     await receiveUser(usernameOutput);
 
   }
-  websockets.push(ws);
+  else if (getMessagEntry === "Hello, server!") {
+    const clientData = {
+      websocket: ws,
+      username: ""
+    }
+    websockets.push(clientData);
+    console.log(websockets.length)
+  }
+  
+  
   const messageDatas = await loadMessages();
   const wsMessage = JSON.stringify([
     {
       type: "messagesData",
       message: JSON.stringify(messageDatas),
+      users: websockets
     },
   ]);
   
-  console.log(websockets.length)
+
   for (let i = 0; i < websockets.length; i++) {
-    websockets[i].send(wsMessage)
+    websockets[i].websocket.send(wsMessage)
   }
 
 };
+
+const onClose = async (ws) => {
+  websockets = websockets.filter((entry) => entry.websocket !== ws);
+  const messageDatas = await loadMessages();
+  const wsMessage = JSON.stringify([
+    {
+      type: "messagesData",
+      message: JSON.stringify(messageDatas),
+      users: websockets
+    },
+  ]);
+  
+
+  for (let i = 0; i < websockets.length; i++) {
+    websockets[i].websocket.send(wsMessage)
+  }
+}
 
 
 
